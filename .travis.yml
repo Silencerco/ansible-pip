@@ -1,11 +1,43 @@
 language: python
-python: 2.7
 sudo: yes
+
+matrix:
+  include:
+    - python: 2.7
+      env: TOXENV=py27-ansible23
+    - python: 2.7
+      env: TOXENV=py27-ansible22
+    - python: 2.7
+      env: TOXENV=py27-ansible21
+    - python: 2.7
+      env: TOXENV=py27-ansible20
+    - python: 2.7
+      env: TOXENV=py27-ansible19
 
 install:
   - pip install tox
 
 script:
-  - ln -s ${PWD} tests/roles/pip
-  - ln -s ${PWD}/tests tests/roles/tests
+  - ln -s "${PWD} tests/roles/pip"
+  - ln -s "${PWD}/tests tests/roles/tests"
   - tox -e travis
+
+notifications:
+  email: false
+  slack:
+    template:
+      - "%{repository_name}@%{branch} %{commit} : [%{build_number}] %{result}"
+      - "%{build_url}"
+      - "'%{commit_subject}' by %{author}"
+      - "%{elapsed_time} : %{duration}"
+      - "%{message}"
+    on_success: always
+    on_failure: always
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+
+before_cache:
+  - rm -f "${HOME}/.cache/pip/log/debug.log"
+
+cache:
+  directories:
+    - "${HOME}/.cache/pip"
