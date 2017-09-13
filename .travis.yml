@@ -6,4 +6,5 @@ install:
   - pip install tox
 
 script:
+  - ln -s ../ansible-pip ../pip
   - tox -e travis
