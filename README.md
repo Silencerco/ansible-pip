@@ -1,11 +1,11 @@
 # pip
 
-[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/saucelabs-ansible/pip/master/LICENSE)
-[![Build Status](https://travis-ci.org/saucelabs-ansible/pip.svg?branch=master)](https://travis-ci.org/saucelabs-ansible/pip)
+[![License](https://img.shields.io/badge/license-New%20BSD-blue.svg?style=flat)](https://raw.githubusercontent.com/Silencerco/ansible-pip/master/LICENSE)
+[![Build Status](https://travis-ci.org/Silencerco/ansible-pip.svg?branch=master)](https://travis-ci.org/Silencerco/ansible-pip)
 
 [![Platform](http://img.shields.io/badge/platform-ubuntu-dd4814.svg?style=flat)](#)
 
-[![Project Stats](https://www.openhub.net/p/saucelabs-ansible-pip/widgets/project_thin_badge.gif)](https://www.openhub.net/p/saucelabs-ansible-pip/)
+[![Project Stats](https://www.openhub.net/p/Silencerco-ansible-pip/widgets/project_thin_badge.gif)](https://www.openhub.net/p/Silencerco-ansible-pip/)
 
 Ansible role to install [pip](https://pip.pypa.io/en/stable/).
 
