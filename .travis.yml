@@ -18,7 +18,7 @@ install:
   - pip install tox
 
 script:
-  - ln -s "${PWD} tests/roles/pip"
+  - ln -s "${PWD}" tests/roles/pip
   - tox -e travis
 
 notifications:
