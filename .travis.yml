@@ -19,7 +19,6 @@ install:
 
 script:
   - ln -s "${PWD} tests/roles/pip"
-  - ln -s "${PWD}/tests tests/roles/tests"
   - tox -e travis
 
 notifications:
