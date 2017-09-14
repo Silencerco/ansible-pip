@@ -25,7 +25,7 @@ galaxy_info:
     - name: Ubuntu
       versions:
         - all
-        - vivid
+        - xenial
         - trusty
         - precise
   galaxy_tags:
