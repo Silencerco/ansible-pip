@@ -1,9 +1,43 @@
 language: python
-python: 2.7
-sudo: yes
+sudo: true
+
+matrix:
+  include:
+    - python: 2.7
+      env: TOXENV=py27-ansible23
+    - python: 2.7
+      env: TOXENV=py27-ansible22
+    - python: 2.7
+      env: TOXENV=py27-ansible21
+    - python: 2.7
+      env: TOXENV=py27-ansible20
+    - python: 2.7
+      env: TOXENV=py27-ansible19
 
 install:
   - pip install tox
 
 script:
-  - tox -e travis
+  - tox
+
+notifications:
+  email: false
+  slack:
+    template:
+      - "%{repository_name}@%{branch} %{commit} : [%{build_number}] %{result} "
+      - "%{build_url}"
+      - "'%{commit_subject}' by %{author}"
+      - "%{elapsed_time} : %{duration}"
+      - "%{message}"
+    rooms:
+    secure: au05e3OhZbTiwUX6ccnUBNrOFEdz/TnlOu+QZzaMQlsRS2EGDRmqZI4pEA+UVLuNeLexkOT307jv2ooZWCrFQxLgkORHtIDzU8JZCtlgE9LeKCLGQHsxmgZFx9CWajN7FWO+xpKL3iR272j4eW5WKJ5gv8YTLAe64IYgUcMpG/ZzywmtWNLpdgHY67LKBJg6mALK+yeu31vpcimVNxrJvt0q71j1feEoWy98eq1Q99buUYY7SSW3fzh9Pev0eRaLNlHHpmmMMu1idC7XwxwbxvkQID3yde3KCqhgSR6ftYuPqnvqnCBvrcnM1IejBttngjj+y3FAav3qvO0xCBf4KRgcFOG6YWacIMR6rSFC+maLnZS7uAKWvpyYZleqoV2usFSVDuNRp6+wzJsXpXod53nwzlIF94dL7iik/xaCQwVxu9AbTkhUXYS+TFLXo5636nk777cf7yPsyO8Y7L1W7cgLYE34lj4pGfweafOBRwo6z9lyOc3vw8hhF7M0Hu/quaauhjZxKs/vXPLfn0PyLHHRZWz/fOlCRw9p9WksXDQGIAFBp33OETfbtai+BEr6gL5G2vNBAFcaEi7fH+yFdAkwYPUEiMPnnXlEG/DdJJWZTOXgEnF8VB2+Z0Zs/XLyGfx44sgP7cnb6T1M/tigeQf5TkUj91ZU1ge26dVOfNo=
+    on_success: always
+    on_failure: always
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+
+before_cache:
+  - "find ${HOME}/.pip -name log -o -name __pycache__ -type d | xargs -I {} rm -rf {}"
+
+cache:
+  directories:
+    - "${HOME}/.cache/pip"
