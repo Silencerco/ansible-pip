@@ -1,6 +1,12 @@
 ---
-# file: pip/tests/vars/main.yml
+# file: pip/tests/boxes.yml
 #
+
+provider:
+  virtualbox:
+    memory: 1024
+    cpus: 1
+
 
 vagrant:
 

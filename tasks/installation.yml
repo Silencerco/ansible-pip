@@ -14,13 +14,17 @@
   get_url:
     url=https://bootstrap.pypa.io/get-pip.py
     dest="{{ pip_dir_source }}/get-pip.py"
-  sudo: yes
-  when: pip_task_installed is defined and pip_task_installed.rc != 0
+  become: yes
+  when: pip_task_installed is defined and
+        pip_task_installed.rc is defined and
+        pip_task_installed.rc != 0
 
 - name: run installer
   command: "python {{ pip_dir_source }}/get-pip.py"
-  sudo: yes
-  when: pip_task_installed is defined and pip_task_installed.rc != 0
+  become: yes
+  when: pip_task_installed is defined and
+        pip_task_installed.rc is defined and
+        pip_task_installed.rc != 0
 
 - name: check installed version
   command: pip --version
@@ -32,5 +36,7 @@
   pip:
     name=pip
     version="{{ pip_version }}"
-  sudo: yes
-  when: pip_task_version is defined and pip_task_version.stdout.find("pip {{ pip_version }} from") == -1
+  become: yes
+  when: pip_task_version is defined and
+        pip_task_version.stdout is defined and
+        pip_task_version.stdout.find("pip {{ pip_version }} from") == -1
