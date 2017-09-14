@@ -5,4 +5,4 @@
 #
 
 pip_dir_source: /usr/local/src
-pip_version: 8.1.1
+pip_version: 9.0.1
