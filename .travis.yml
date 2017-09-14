@@ -18,8 +18,8 @@ install:
   - pip install tox
 
 script:
-  - ln -s "${PWD}" tests/roles/pip
-  - tox -e travis
+  - bash -c "cd tests/roles && ln -s ../../ansible-pip pip"
+  - tox
 
 notifications:
   email: false
