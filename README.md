@@ -18,7 +18,7 @@ Ansible role to install [pip](https://pip.pypa.io/en/stable/).
 | Debian | Debian  | Wheezy  | [![x86_64](http://img.shields.io/badge/x86_64-unknown-cccccc.svg?style=flat)](#) |
 | Debian | Ubuntu  | Precise | [![x86](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#)  |
 | Debian | Ubuntu  | Trusty  | [![x86](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
-| Debian | Ubuntu  | Vivid   | [![x86](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
+| Debian | Ubuntu  | Xenial  | [![x86](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
 | RedHat | CentOS  | 6.6     | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
 | RedHat | Centos  | 7       | [![x86_64](http://img.shields.io/badge/x86_64-passed-006400.svg?style=flat)](#) |
 
