@@ -18,7 +18,7 @@ install:
   - pip install tox
 
 script:
-  - bash -c "cd tests/roles && ln -s ../../ansible-pip pip"
+  - bash -c "cd .. && mv ansible-pip pip && ln -s pip ansible-pip"
   - tox
 
 notifications:
